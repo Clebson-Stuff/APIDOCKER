@@ -1,5 +1,5 @@
 FROM node:10
-RUN apt-get update && apt-get install -y netcat
+
 RUN apt-get update && apt-get install -y build-essential && apt-get install -y python
 
 WORKDIR /app

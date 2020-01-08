@@ -5,12 +5,11 @@ services:
     build: .
     depends_on:
       - postgres
-#    links:
-#     - postgres
+    container_name: pegadas_api
     environment:
       NODE_ENV: test
       PORT: 3000
-      WAIT_HOSTS: postgres:5432
+      WAIT_HOSTS: postgres:5431
     ports:
       - "3000:3000"
     command: "npm run start-builded-app"
@@ -19,10 +18,11 @@ services:
       - /app/node_modules
   postgres:
     image: postgres:10.4
+    container_name: postgres
     ports:
-      - "35432:5431"
+      - "5431:5431"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pgroot
-      POSTGRES_DB: api_test
-      POSTGRES_HOST: 172.17.0.3
+      POSTGRES_DB: pegadas
+      

@@ -4,7 +4,7 @@
   "description": "\"Api do portal pegadas\"",
   "main": "server.ts",
   "scripts": {
-    "start-builded-app": "NODE_ENV=test node ./build/server.js",
+    "start-builded-app": "NODE_ENV=development node ./build/server.js",
     "start": "./node_modules/.bin/ts-node ./server/server.ts",
     "watch": "NODE_ENV=development ./node_modules/.bin/nodemon -w . --ext .ts --exec npm run start",
     "run-builded": "NODE_ENV=development nodemon ./build/server.js",
