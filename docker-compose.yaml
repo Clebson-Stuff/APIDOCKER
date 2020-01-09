@@ -20,11 +20,12 @@ services:
     image: postgres:10.4
     container_name: postgres
     ports:
-      - "5431:5431"
+      - "5431:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pgroot
       POSTGRES_DB: pegadas
+      PGDATA: ./data/
     volumes: 
       - ./data/
       

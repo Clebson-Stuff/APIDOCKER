@@ -13,7 +13,7 @@ export default class User implements IUser{
 
   create(user: any) {
     return models.User.create(user);
-  }
+  }   
 
   getAll(): Bluebird<IUser[]> {
     return models.User.findAll({

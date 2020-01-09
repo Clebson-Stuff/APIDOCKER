@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 export default function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     id: {

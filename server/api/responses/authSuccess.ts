@@ -2,7 +2,7 @@ import {Request, Response} from 'express';
 import * as jwt from 'jwt-simple';
 import * as HTTPStatus from 'http-status';
 const config = require('../../config/env/config')();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 export function authSuccess(res: Response, creadentials:any, data: any){
     const isMatch = bcrypt.compareSync(creadentials.password, data.password);
@@ -20,3 +20,4 @@ export function authSuccess(res: Response, creadentials:any, data: any){
 export function authFail(req: Request, res: Response){
   res.sendStatus(HTTPStatus.UNAUTHORIZED);
 }
+
