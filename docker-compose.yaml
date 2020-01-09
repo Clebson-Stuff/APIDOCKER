@@ -25,4 +25,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pgroot
       POSTGRES_DB: pegadas
+    volumes: 
+      - ./data/
       

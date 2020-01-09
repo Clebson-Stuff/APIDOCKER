@@ -1,5 +1,5 @@
 import * as passport from 'passport';
-import {User} from './modules/User/service';
+import User from './modules/User/service';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 const config = require('./config/env/config')();
 

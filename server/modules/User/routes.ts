@@ -1,30 +1,29 @@
 import UserController from './controller';
 import {Request, Response} from 'express';
-let UserCtlr;
 
 export default class UserRoutes {
-
+  public UserCtlr;
   constructor(){
-    UserCtlr = new UserController();
+    this.UserCtlr = new UserController();
   }
 
   index(req:Request, res:Response) {
-    return UserCtlr.getAll(req, res);
+    return this.UserCtlr.getAll(req, res);
   }
 
   create(req:Request, res:Response) {
-    return UserCtlr.createUser(req, res);
+    return this.UserCtlr.createUser(req, res);
   }
 
   findOne(req:Request, res:Response) {
-    return UserCtlr.getById(req, res);
+    return this.UserCtlr.getById(req, res);
   }
 
   update(req:Request, res:Response) {
-    return UserCtlr.updateUser(req, res);
+    return this.UserCtlr.updateUser(req, res);
   }
 
   destroy(req:Request, res:Response){
-    return UserCtlr.deleteUser(req, res);
+    return this.UserCtlr.deleteUser(req, res);
   }
 }

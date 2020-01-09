@@ -1,8 +1,9 @@
-import {IUser, createUser, createUsers, createUserById, createUserByEmail, IUserDetail} from './interface';
-var models  = require('../../models');
+import {IUser, createUser, createUsers, createUserById, createUserByEmail, IUserDetail} from '../interface';
+import User from '../service';
+var models  = require('../../../models');
 import * as Bluebird from 'bluebird';
 
-export default class User implements IUser{
+export default class Dev implements IUser,User {
 
   public id: number;
   public name: string;

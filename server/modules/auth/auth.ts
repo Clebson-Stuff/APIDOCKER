@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import * as _ from 'lodash';
-import {User} from '../User/service';
+import User from '../User/service';
 import {authSuccess, authFail} from '../../api/responses/authSuccess';
 const UserService = new User();
 

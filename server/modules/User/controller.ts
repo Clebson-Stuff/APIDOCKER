@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import {onError} from '../../api/responses/errorHandler';
 import {onSuccess} from '../../api/responses/successHandler';
 import {dbErrorHandler} from '../../config/dbErrorHandler';
-import {User} from './service';
+import User from './service';
 
 export default class UserController {
 

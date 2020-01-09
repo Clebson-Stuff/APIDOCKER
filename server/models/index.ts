@@ -4,7 +4,7 @@
   var basename = path.basename(module.filename);
   var config = require('../config/env/config')();
   var env = config.env || 'development';
-  var db = {};
+  var db = <any>{};
   var sequelize;
 
   if (config.db_url) {
