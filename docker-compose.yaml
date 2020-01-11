@@ -2,7 +2,8 @@
 version: "3"
 services:
   app:
-    build: .
+    build:
+      context: ./backend
     depends_on:
       - postgres
     container_name: pegadas_api
@@ -13,9 +14,12 @@ services:
     ports:
       - "3000:3000"
     command: "npm run start-builded-app"
-    volumes:
-      - .:/app/
-      - /app/node_modules
+  frontend:
+    build:
+      context: ./frontend
+    command: "npm run start-builded-app"
+    ports: 
+      - "8080:8080"
   postgres:
     image: postgres:10.4
     container_name: postgres
@@ -25,7 +29,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pgroot
       POSTGRES_DB: pegadas
-      PGDATA: ./data/
     volumes: 
-      - ./data/
+      - ./postgres-data:/var/lib/postgresql/data
       
